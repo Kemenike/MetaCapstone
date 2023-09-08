@@ -6,20 +6,22 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import Footer from "./components/Footer.tsx";
 
-import littleLemonLogo from './assets/Logo.svg';
+import littleLemonLogo from "./assets/Logo.svg";
 
 function App() {
   return (
-    <>
-      <Nav logo = {littleLemonLogo}/>
-      <main>
-        <Landing />
-        <Specials />
-        <Testimonials />
-        <About />
-      </main>
-      <Footer />
-    </>
+    <div className="app__main">
+      <div className="app__container">
+        <Nav logo={littleLemonLogo} />
+        <main>
+          <Landing />
+          <Specials />
+          <Testimonials />
+          <About />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

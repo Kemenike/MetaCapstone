@@ -2,7 +2,7 @@
     height: 125px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #nav_bar ul{
@@ -14,11 +14,17 @@
 }
 
 #nav_bar li {
-    padding-left: 6px;
+    padding-left: 24px;
 }
 
-#nav_bar a {
+#nav_bar li:hover {
+    text-decoration: underline;
+    text-decoration-skip: yes;
+}
+
+.link {
     text-decoration: none;
+    color: var(--primary-green);
 }
 
 #nav_bar img {

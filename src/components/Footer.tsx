@@ -1,39 +1,43 @@
 import React from 'react'
+import './Footer.css';
 
 function Footer() {
   return (
     <>
       <img />
-      <section>
-        <h1>Doormat Navigation</h1>
-        <ul>
-          <li><a href="" role='button' className="link footer__link">Home</a></li>
-          <li><a href="" role='button' className="link footer__link">About</a></li>
-          <li><a href="" role='button' className="link footer__link">Menu</a></li>
-          <li><a href="" role='button' className="link footer__link">Reservations</a></li>
-          <li><a href="" role='button' className="link footer__link">Order Online</a></li>
-          <li><a href="" role='button' className="link footer__link">Login</a></li>
-        </ul>
-      </section>
-      <section>
-        <h1>Contact</h1>
-        <ul>
-          <li><a href="" role='button' className="link footer__link">Address</a></li>
-          <li><a href="" role='button' className="link footer__link">Phone Number</a></li>
-          <li><a href="" role='button' className="link footer__link">Email</a></li>
-        </ul>
-      </section>
-      <section>
-        <h1>Social Media Links</h1>
-        <ul>
-          <li><a href="" role='button' className="link footer__link">Facebook</a></li>
-          <li><a href="" role='button' className="link footer__link">Instagram</a></li>
-          <li><a href="" role='button' className="link footer__link">YouTube</a></li>
-          <li><a href="" role='button' className="link footer__link">Reservations</a></li>
-          <li><a href="" role='button' className="link footer__link">TikTok</a></li>
-          <li><a href="" role='button' className="link footer__link">Telegram</a></li>
-        </ul>
-      </section>
+      <div className="footer__container">
+        <section>
+          <h1 className='sectiontitle'>Doormat Navigation</h1>
+          <ul className="footerlist">
+            <li><a href="" role='button' className="link footer__link leadtext">Home</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">About</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Menu</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Reservations</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Order Online</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Login</a></li>
+          </ul>
+        </section>
+        <section>
+          <h1 className='sectiontitle'>Contact</h1>
+          <ul className='footerlist'>
+            <li><a href="" role='button' className="link footer__link leadtext">Address</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Phone Number</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Email</a></li>
+          </ul>
+        </section>
+        <section>
+          <h1 className='sectiontitle'>Social Media Links</h1>
+          <ul className='footerlist'>
+            <li><a href="" role='button' className="link footer__link leadtext">Facebook</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Instagram</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">YouTube</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Reservations</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">TikTok</a></li>
+            <li><a href="" role='button' className="link footer__link leadtext">Telegram</a></li>
+          </ul>
+        </section>
+      </div>
+
     </>
   )
 }

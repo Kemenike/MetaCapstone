@@ -1,0 +1,13 @@
+.footerlist {
+    list-style-type: none;
+}
+
+.footerlist > li:hover {
+    text-decoration: underline;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-around;
+}
+

@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
 
 * {
+  padding: 0;
+  margin: 0;
   --primary-green: #495e57;
   --primary-yellow: #f4ce14;
   --secondary-pink: #ee9972;
   --secondary-pink2: #fbdabb;
   --secondary-white: #edefee;
   --secondary-grey: #333;
+}
+
+.app__main {
+  display: flex;
+  justify-content: center;
+}
+
+.app__container {
+  width: 100%;
+  max-width: 1000px;
+  align-self: center;
 }
 
 .displaytitle {
