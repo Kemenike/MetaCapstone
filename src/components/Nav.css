@@ -1,0 +1,26 @@
+#nav_bar {
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#nav_bar ul{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+#nav_bar li {
+    padding-left: 6px;
+}
+
+#nav_bar a {
+    text-decoration: none;
+}
+
+#nav_bar img {
+    max-width: 260px;
+}

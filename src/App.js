@@ -1,5 +1,5 @@
 import "./App.css";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav.tsx";
 import Landing from "./components/Landing";
 import Specials from "./components/Specials";
 import Testimonials from "./components/Testimonials";

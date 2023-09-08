@@ -1,8 +1,9 @@
 import React from 'react'
+import './Nav.css';
 
 function Nav(props) {
   return (
-    <>
+    <div id='nav_bar'>
       <img src={props.logo} alt='Little Lemon Logo' />
       <ul className="link__container">
         <li><a href="/" role='button' className="link">Home</a></li>
@@ -12,7 +13,7 @@ function Nav(props) {
         <li><a href="/orderonline" role='button' className="link">Order Online</a></li>
         <li><a href="/login" role='button' className="link">Login</a></li>
       </ul>
-    </>
+    </div>
   )
 }
 

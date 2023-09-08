@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500&display=swap');
+
+* {
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+  --secondary-pink: #ee9972;
+  --secondary-pink2: #fbdabb;
+  --secondary-white: #edefee;
+  --secondary-grey: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.displaytitle {
+  font-size: 64px;
+  font-weight: 500;
+  font-family: 'Markazi Text', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.subtitle {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: 'Markazi Text', serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.leadtext {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Karla', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.sectiontitle {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'Karla', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardtitle {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Karla', sans-serif;
+}
+
+.paragraphtext {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Karla', sans-serif;
+}
+
+.highlighttext {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Karla', sans-serif;
+}
+
+.sectioncatagory {
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Karla', sans-serif;
 }
