@@ -1,0 +1,38 @@
+.landing__main {
+    width: 100%;
+}
+
+.landing__main img {
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+.landing__main h1 {
+    color: var(--primary-yellow);
+}
+
+.landing__main h3, p {
+    color: var(--secondary-white);
+}
+
+.landing__main p {
+    padding: 64px 0 32px 0;
+    max-width: 80%;
+}
+
+.btn {
+    width: 200px;
+    height: 60px;
+    border-radius: 16px;
+    background-color: var(--primary-yellow);
+    color: var(--secondary-grey);
+    border: none;
+}
+
+.landing__main .row {
+    display: flex;
+    padding: 64px;
+    flex-direction: row;
+}

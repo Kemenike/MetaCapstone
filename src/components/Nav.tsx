@@ -3,7 +3,7 @@ import './Nav.css';
 
 function Nav(props) {
   return (
-    <div id='nav_bar'>
+    <div id='nav_bar' className='section__container'>
       <img src={props.logo} alt='Little Lemon Logo' />
       <ul className="link__container">
         <li><a href="/" role='button' className="link leadtext">Home</a></li>

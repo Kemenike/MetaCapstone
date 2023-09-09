@@ -1,9 +1,21 @@
 .footerlist {
     list-style-type: none;
+    padding-top: 8px;
 }
 
 .footerlist > li:hover {
     text-decoration: underline;
+}
+
+.footer__container > img {
+}
+
+.footerlist > li {
+    padding: 2px;
+}
+
+.footerlist > li > a {
+    color: var(--secondary-grey);
 }
 
 .footer__container {
