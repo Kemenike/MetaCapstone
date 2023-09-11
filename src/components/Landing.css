@@ -1,10 +1,16 @@
 .landing__main img {
     object-fit: cover;
     width: 300px;
-    height: 400px;
+    margin-bottom: -50%;
     border-radius: 8px;
+    transform: translate(0, 8px);
 }
-
+.backdrop {
+    background-color: var(--primary-green);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 .landing__main h1 {
     color: var(--primary-yellow);
 }
@@ -29,6 +35,6 @@
 
 .landing__main .row {
     display: flex;
-    padding: 64px;
+    padding: 48px;
     flex-direction: row;
 }

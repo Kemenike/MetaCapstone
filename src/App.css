@@ -25,6 +25,8 @@
 }
 
 .section__container {
+  position: relative;
+  overflow: visible;
   max-width: 1000px;
   width: 100%;
 }

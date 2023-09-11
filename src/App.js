@@ -14,7 +14,9 @@ function App() {
       <div className="app__container">
         <Nav logo={littleLemonLogo} />
         <main>
-          <Landing />
+          <div className="backdrop">
+            <Landing />
+          </div>
           <Specials />
           <Testimonials />
           <About />
