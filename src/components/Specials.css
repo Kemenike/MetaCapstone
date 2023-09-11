@@ -1,0 +1,11 @@
+.specials {
+    margin-top: 150px;
+}
+
+.specials > .row {
+    justify-content: space-between;
+}
+
+.specials > .row:last-child {
+    margin-bottom: 72px;
+}

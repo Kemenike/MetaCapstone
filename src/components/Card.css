@@ -1,0 +1,49 @@
+.card {
+    width: 265px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card > img {
+    width: 265px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.card .price {
+    color: var(--secondary-pink);
+}
+
+.card > .card_info {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-white);
+    padding: 16px;
+    height: 100%;
+}
+
+.card a > span > img {
+    width: 18px;
+    margin-left: 8px;
+}
+
+.card .row {
+    padding: 0;
+    justify-content: space-between;
+}
+
+.dish_title {
+    color: var(--secondary-grey);
+    padding-bottom: 16px;
+}
+
+.dish_description {
+    color: var(--secondary-grey);
+    padding-bottom: 8px;
+}
+
+.orderdel {
+    justify-self: flex-end;
+}

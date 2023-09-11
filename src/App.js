@@ -13,14 +13,12 @@ function App() {
     <div className="app__main">
       <div className="app__container">
         <Nav logo={littleLemonLogo} />
-        <main>
-          <div className="backdrop">
-            <Landing />
-          </div>
-          <Specials />
-          <Testimonials />
-          <About />
-        </main>
+        <div className="backdrop">
+          <Landing />
+        </div>
+        <Specials />
+        <Testimonials />
+        <About />
         <Footer />
       </div>
     </div>

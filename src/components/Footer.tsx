@@ -5,7 +5,7 @@ import footerImg from '../assets/Logo.svg';
 function Footer() {
   return (
     <>
-      <div className="footer__container">
+      <div className="footer__container section__container">
         <img src={footerImg} alt=''/>
         <section>
           <h1 className='sectiontitle' style={{color: "var(--primary-green)"}}>Doormat Navigation</h1>
