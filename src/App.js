@@ -17,7 +17,9 @@ function App() {
           <Landing />
         </div>
         <Specials />
-        <Testimonials />
+        <div className="backdrop" style={{backgroundColor: "var(--secondary-pink)"}}>
+          <Testimonials />
+        </div>
         <About />
         <Footer />
       </div>
