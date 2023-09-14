@@ -14,6 +14,7 @@ function Testimony({ name, profilePicture, raiting, message }) {
         <div className='testimony'>
             <div className="row">
                 <h1 className='testimony__rating'>
+                    {/* TODO: Create function to fix stars based off raiting. */}
                     {ratingStars()}
                     <FontAwesomeIcon width="20px" icon={faStar} />
                     <FontAwesomeIcon width="20px" icon={faStar} />

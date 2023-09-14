@@ -1,4 +1,25 @@
+.testimony {
+    background-color: var(--secondary-white);
+    margin-right: 24px;
+    max-width: 200px;
+    border-radius: 8px;
+    color: var(--secondary-grey);
+}
+
+.testimony__rating {
+    margin: 8px 0 4px 0;
+}
+
+
 .testimony img {
     width: 50px;
     height: 50px;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.testimony p {
+    color: var(--secondary-grey);
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
