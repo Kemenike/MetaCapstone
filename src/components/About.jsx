@@ -4,11 +4,11 @@ import './About.css'
 function About() {
   return (
     <div className='about section__container'>
-      <section>
+      <section className=''>
 
       </section>
       <section>
-        
+
       </section>
 
     </div>
