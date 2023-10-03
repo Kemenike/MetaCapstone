@@ -6,6 +6,12 @@ import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons';
 
 function Testimony({ name, profilePicture, rating, message }) {
 
+    const starStyle = {
+        color: "var(--primary-yellow)",
+        width: "20px",
+        filter: "drop-shadow(0px 0px .25px var(--primary-green))"
+    }
+
     return (
         <div className='testimony'>
             <div className="row">
@@ -13,14 +19,12 @@ function Testimony({ name, profilePicture, rating, message }) {
                 >
                     {
                         new Array(5).fill(0).map((_, index) => {
-                            if(index+1 <= rating) {
-                                return(<FontAwesomeIcon icon={faStar} width="20px" key={index} />);
-                            } else if ((index+1-rating) === 0.5) {
-                                console.log(index - rating + 1);
-                                console.log("Rating: ", rating, "Index", index);
-                                return(<FontAwesomeIcon icon={faStarHalfStroke} width="20px" key={index} />)
+                            if (index + 1 <= rating) {
+                                return (<FontAwesomeIcon style={starStyle} icon={faStar} key={index} />);
+                            } else if ((index + 1 - rating) === 0.5) {
+                                return (<FontAwesomeIcon style={starStyle} icon={faStarHalfStroke} key={index} />)
                             } else {
-                                return(<FontAwesomeIcon icon={faStarEmpty} width="20px" key={index} />);
+                                return (<FontAwesomeIcon style={starStyle} icon={faStarEmpty} key={index} />);
                             }
                         })
                     }

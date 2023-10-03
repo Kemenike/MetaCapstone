@@ -7,9 +7,6 @@
     text-decoration: underline;
 }
 
-.footer_container > img {
-}
-
 .footerlist > li {
     padding: 2px;
 }
@@ -22,6 +19,5 @@
     display: flex;
     justify-content: space-around;
     margin: 64px 0 48px 0;
-
 }
 

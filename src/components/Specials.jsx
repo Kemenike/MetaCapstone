@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from './Button.tsx';
-import Card from './Card.tsx';
+import Button from './Button.jsx';
+import Card from './Card.jsx';
 import './Specials.css';
 
 //Image imports

@@ -1,10 +1,10 @@
 import "./App.css";
-import Nav from "./components/Nav.tsx";
+import Nav from "./components/Nav.jsx";
 import Landing from "./components/Landing";
 import Specials from "./components/Specials";
 import Testimonials from "./components/Testimonials";
 import About from "./components/About";
-import Footer from "./components/Footer.tsx";
+import Footer from "./components/Footer.jsx";
 
 import littleLemonLogo from "./assets/Logo.svg";
 

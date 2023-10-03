@@ -1,0 +1,30 @@
+.about_container {
+    display: grid;
+    grid-template-columns: 5fr 2fr 5fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.about_container img {
+    position: absolute;
+    max-width: 250px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about__img_container {
+    position: relative;
+    grid-column: 3 / 3;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 120%;
+}
+
+.top_img {
+}
+
+.bottom_img {
+    transform: translate(150px, 80px);
+}

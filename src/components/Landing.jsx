@@ -1,6 +1,6 @@
 import React from 'react';
 import chefImg from '../assets/restaurantfood.jpg'
-import Button from './Button.tsx';
+import Button from './Button.jsx';
 import './Landing.css';
 
 function Landing() {
