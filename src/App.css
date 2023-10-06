@@ -23,6 +23,18 @@
   align-items: center;
 }
 
+.about__title {
+  color: var(--primary-green);
+}
+
+.about__subtitle {
+  color: var(--secondary-grey);
+}
+
+.about__description {
+  color: var(--primary-green);
+}
+
 .section__container {
   overflow: visible;
   max-width: 1032px;

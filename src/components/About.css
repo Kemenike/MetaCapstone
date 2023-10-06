@@ -1,8 +1,10 @@
 .about_container {
     display: grid;
+    padding: 0 32px 0 32px;
     grid-template-columns: 5fr 2fr 5fr;
     grid-template-rows: 1fr;
     justify-items: center;
+    margin-top: 50px;
     align-items: center;
 }
 
@@ -14,6 +16,7 @@
     border-radius: 8px;
 }
 
+
 .about__img_container {
     position: relative;
     grid-column: 3 / 3;
@@ -23,8 +26,11 @@
 }
 
 .top_img {
+    object-position: 80% 0;
+    transform: translate(-25px, -50px)
 }
 
 .bottom_img {
-    transform: translate(150px, 80px);
+    transform: translate(170px, 50px);
+    object-position: 30% 0;
 }
