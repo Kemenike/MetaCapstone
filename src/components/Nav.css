@@ -1,7 +1,10 @@
-#nav_bar {
+#nav_bar > .row {
     height: 125px;
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    column-gap: 10%;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -14,7 +17,7 @@
 }
 
 #nav_bar li {
-    padding-left: 24px;
+    padding-left: 0px;
 }
 
 #nav_bar li:hover {

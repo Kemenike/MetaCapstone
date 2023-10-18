@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Testimiony.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +15,7 @@ function Testimony({ name, profilePicture, rating, message }) {
     return (
         <div className='testimony'>
             <div className="row">
-                <h1 className='testimony__rating'
-                >
+                <h1 className='testimony__rating'>
                     {
                         new Array(5).fill(0).map((_, index) => {
                             if (index + 1 <= rating) {
