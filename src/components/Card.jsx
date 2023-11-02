@@ -13,7 +13,7 @@ function Card({ img, dishTitle, dishDescription, price }) {
                     <h3 className='price highlighttext'>{price}</h3>
                 </div>
                 <p className='dish_description paragraphtext'>{dishDescription}</p>
-                <a className='orderdel leadtext'>
+                <a href="/" className='orderdel leadtext'>
                     Order for Delivery<span><img src={bell} alt=''/></span>
                 </a>
             </div>

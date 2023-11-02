@@ -6,14 +6,13 @@ import Testimonials from "./Testimonials";
 import About from "./About";
 import Footer from "./Footer.jsx";
 
-import littleLemonLogo from "../assets/Logo.svg";
 import './Home.css';
 
 function Home() {
   return (
     <div className="app__main">
       <div className="app__container">
-        <Nav logo={littleLemonLogo} />
+        <Nav />
         <div className="backdrop">
           <Landing />
         </div>

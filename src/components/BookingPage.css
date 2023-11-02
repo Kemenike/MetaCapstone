@@ -1,0 +1,20 @@
+.booking_page__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.booking_page__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.booking_page__main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
