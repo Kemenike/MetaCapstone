@@ -1,0 +1,41 @@
+.error__page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error_page__container {
+  display: grid;
+  flex-grow: 1;
+  grid-template: auto auto;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  padding: 0 64px 0 64px;
+}
+
+.error__link {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.error__title {
+  color: var(--primary-grey);
+}
+
+.error__subtitle {
+  color: var(--primary-green);
+}
+
+.error__link:hover,
+.error__link:visited,
+.error__link {
+  color: var(--primary-green);
+}
+
+.error_image {
+  max-width: 600px;
+  width: 80vw;
+}

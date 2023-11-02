@@ -1,29 +1,18 @@
 import "./App.css";
-import Nav from "./components/Nav.jsx";
-import Landing from "./components/Landing";
-import Specials from "./components/Specials";
-import Testimonials from "./components/Testimonials";
-import About from "./components/About";
-import Footer from "./components/Footer.jsx";
-
-import littleLemonLogo from "./assets/Logo.svg";
+import Home from './components/Home';
+import BookingPage from './components/BookingPage';
+import ErrorPage from './components/ErrorPage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="app__main">
-      <div className="app__container">
-        <Nav logo={littleLemonLogo} />
-        <div className="backdrop">
-          <Landing />
-        </div>
-        <Specials />
-        <div className="backdrop" style={{backgroundColor: "var(--secondary-pink)"}}>
-          <Testimonials />
-        </div>
-        <About />
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/reserve" element={<BookingPage/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>
+    </Router>
   );
 }
 
