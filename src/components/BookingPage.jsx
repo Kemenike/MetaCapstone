@@ -12,16 +12,6 @@ function BookingPage() {
   const [guests, setGuests] = useState();
   const [occasion, setOccasion] = useState();
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-
-  function updateTimes() {
-    // Update state of availableTimes();
-  }
-
-  function initializeTimes() {
-    //Create initial state of availableTimes();
-  }
-
   return (
       <section className="booking_page__container">
         <section className='booking_page__col'>
