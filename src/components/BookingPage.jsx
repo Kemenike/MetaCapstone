@@ -1,31 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState, useReducer } from 'react'
 import Nav from './Nav';
 import BookingForm from './BookingForm';
 import "./BookingPage.css";
-import Reservation from './Reservation';
 
 function BookingPage() {
 
   //TODO: Use useContext / createContext to create a reservation API.
 
-  const [reservation, setReservation] = useState({
-    date: null,
-    time: null,
-    guests: 1,
-    occasion: null
-  });
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+  const [guests, setGuests] = useState();
+  const [occasion, setOccasion] = useState();
+
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+
+  function updateTimes() {
+    // Update state of availableTimes();
+  }
+
+  function initializeTimes() {
+    //Create initial state of availableTimes();
+  }
 
   return (
-    <Reservation.Provider value={setReservation}>
       <section className="booking_page__container">
         <section className='booking_page__col'>
           <Nav />
           <section className='booking_page__main'>
-            <BookingForm />
+            <BookingForm setDate={setDate}
+              setTime={setTime}
+              setGuests={setGuests}
+              setOccasion={setOccasion}
+            />
           </section>
         </section>
       </section>
-    </Reservation.Provider>
   )
 }
 
