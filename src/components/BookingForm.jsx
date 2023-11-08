@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState }from 'react'
 import './BookingForm.css';
 
-function BookingForm({ setDate, setTime, setGuests, setOccasion }) {
+function BookingForm({ availableTimes, timeDispatch}) {
+
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+  const [guests, setGuests] = useState();
+  const [occasion, setOccasion] = useState();
 
   function submitForm(e) {
     e.preventDefault();
-    console.log();
+    console.log("Submitting form...");
+    timeDispatch({type: 'remove_time', date: date, time: time});
+    console.log(availableTimes);
   }
 
   return (
@@ -20,12 +27,10 @@ function BookingForm({ setDate, setTime, setGuests, setOccasion }) {
         <label htmlFor='res-time'>Choose Time</label>
         <select id='res-time' onChange={e => setTime(e.target.value)}>
           <option value={""}>Select...</option>
-          <option value={"17:00"}>17:00</option>
-          <option value={"18:00"}>18:00</option>
-          <option value={"19:00"}>19:00</option>
-          <option value={"20:00"}>20:00</option>
-          <option value={"21:00"}>21:00</option>
-          <option value={"22:00"}>22:00</option>
+          {
+            /* Index Key doesn't matter here. */
+            availableTimes?.map((elem, indx) => <option key={indx}value={elem}>{elem}:00</option>)
+          }
         </select>
         <label htmlFor='guests'>Number of Guests</label>
         <input type='number' placeholder='1' min={1} max={10} onChange={e => setGuests(e.target.value)} id='guests' />

@@ -17,9 +17,7 @@ function ErrorPage() {
           </h1>
           <h3 className="error__subtitle subtitle">
             It looks like we are still nurturing this page. Visit our
-            <span>
-              <Link className='error__link' to="/"> home page</Link>
-            </span> for awesome meals.
+            <Link className='error__link' to="/"> home page</Link> for awesome meals.
           </h3>
         </div>
       </section>
