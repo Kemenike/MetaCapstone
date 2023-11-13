@@ -17,4 +17,20 @@
 .booking_page__main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+.booking_page__description {
+  grid-column: 1 / span 12;
+}
+
+.booking_page__form {
+  grid-column: 1 / span 12;
+}
+
+#cooking {
+  max-width: 1000px;
+  margin-top: 64px;
+  align-self: center;
+  border-radius: 8px;
 }

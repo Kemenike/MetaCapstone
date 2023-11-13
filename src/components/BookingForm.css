@@ -1,5 +1,31 @@
 #booking__form {
   display: grid;
-  max-width: 200px;
-  gap: 20px;
+  gap: 4vh;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
+}
+
+#booking__form > input, select, option {
+  padding: max(0.5vh, 10px);
+  border-radius: 8px;
+  border: 1px solid var(--primary-green);
+}
+
+#booking__button {
+  grid-column: 2 / span 2;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+  transition: all 150ms ease-in-out;
+}
+
+#booking__button:hover {
+  background-color: var(--primary-yellow);
+  color: var(--primary-grey);
+  border-color: transparent;
+}
+
+#booking__button:active {
+  width: 98%;
+  height: 98%;
 }

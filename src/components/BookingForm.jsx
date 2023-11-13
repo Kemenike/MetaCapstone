@@ -1,7 +1,7 @@
 import React, { useState }from 'react'
 import './BookingForm.css';
 
-function BookingForm({ availableTimes, timeDispatch}) {
+function BookingForm({ availableTimes, timeDispatch }) {
 
   const [date, setDate] = useState();
   const [time, setTime] = useState();
@@ -18,13 +18,16 @@ function BookingForm({ availableTimes, timeDispatch}) {
   return (
     <section id='booking__form__container'>
       <form id='booking__form'>
-        <label htmlFor='res-date'>Choose Date</label>
+        <label className='leadtext' htmlFor='res-date'>Choose Date</label>
         <input
           type='date'
           id='res-date'
-          onChange={e => setDate(e.target.value)}
+          onChange={e => {
+            setDate(e.target.value)
+            timeDispatch({type: 'get_time', date: date, time: time})
+          }}
         />
-        <label htmlFor='res-time'>Choose Time</label>
+        <label className='leadtext' htmlFor='res-time'>Choose Time</label>
         <select id='res-time' onChange={e => setTime(e.target.value)}>
           <option value={""}>Select...</option>
           {
@@ -32,18 +35,18 @@ function BookingForm({ availableTimes, timeDispatch}) {
             availableTimes?.map((elem, indx) => <option key={indx}value={elem}>{elem}:00</option>)
           }
         </select>
-        <label htmlFor='guests'>Number of Guests</label>
+        <label className='leadtext' htmlFor='guests'>Number of Guests</label>
         <input type='number' placeholder='1' min={1} max={10} onChange={e => setGuests(e.target.value)} id='guests' />
-        <label htmlFor='occasion'>Occasion</label>
+        <label className='leadtext' htmlFor='occasion'>Occasion</label>
         <select id='occasion' onChange={e => setOccasion(e.target.value)}>
           <option value="">Select...</option>
           <option value="birthday">Birthday</option>
           <option value='anniversary'>Anniversary</option>
         </select>
-        <input type='submit' onClick={e => submitForm(e)} value="Make Your Reservation" />
+        <input id="booking__button" className='leadtext' type='submit' onClick={e => submitForm(e)} value="Book Now" />
       </form>
     </section>
   )
 }
 
-export default BookingForm
+export default BookingForm;
