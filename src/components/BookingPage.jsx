@@ -29,7 +29,7 @@ function BookingPage({ availableTimes, timeDispatch }) {
             />
           </div>
         </section>
-        <img id="cooking" src={cooking}/>
+        <img id="cooking" src={cooking} alt='Chef garnishing a dish.'/>
       </section>
     </section>
   )
