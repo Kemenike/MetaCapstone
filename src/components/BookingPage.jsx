@@ -6,8 +6,6 @@ import "./BookingPage.css";
 
 function BookingPage() {
 
-  // The prop drilling is called for in this course unfortunatly; name is the same to track it.
-
   return (
     <section className="booking_page__container">
       <section className='booking_page__col'>

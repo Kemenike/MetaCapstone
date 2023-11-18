@@ -30,11 +30,11 @@ function BookingForm() {
           }}
         />
         <label className='leadtext' htmlFor='res-time'>Choose Time</label>
-        <select id='res-time' onChange={e => setTime(e.target.value)}>
+        <select data-testid="res-time-dropdown" id='res-time' onChange={e => setTime(e.target.value)}>
           <option value={""}>Select...</option>
           {
             /* Index Key doesn't matter here. */
-            times?.map((elem, indx) => <option key={indx}value={elem}>{elem}:00</option>)
+            times?.map((elem, indx) => <option data-testid="res-time-dropdown-option" key={indx} value={elem}>{elem}:00</option>)
           }
         </select>
         <label className='leadtext' htmlFor='guests'>Number of Guests</label>
