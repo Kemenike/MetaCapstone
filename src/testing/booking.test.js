@@ -1,7 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import BookingForm from "../components/BookingForm";
-import ReservationStore from "../api/ResrvationStore";
+import ReservationStore from "../store/ResrvationStore";
 
 test("Renders the BookingForm Button", () => {
   render(
@@ -29,8 +29,8 @@ test("Initialize Times Values", () => {
   // Testing if the dropdown shows all the options.
   const dropDownListOptions = screen.getAllByTestId("res-time-dropdown-option");
   let tempArr = [];
-    // Add all found values for the dropdown to temp array as actual ints.
-  dropDownListOptions.forEach(elem => tempArr.push(parseInt(elem.value)))
+  // Add all found values for the dropdown to temp array as actual ints.
+  dropDownListOptions.forEach((elem) => tempArr.push(parseInt(elem.value)));
   // Make sure that all values are found.
   expect(tempArr).toStrictEqual([17, 18, 19, 20, 21, 22]);
 });
@@ -42,21 +42,21 @@ test("Update Times Values", () => {
     </ReservationStore>
   );
 
-  // Testing if the dropdown rendered.
+  // Testing if the dropdown rendered and testing if Button is rendered.
   const dropDownList = screen.getByTestId("res-time-dropdown");
-  expect(dropDownList).toBeInTheDocument();
-
-
   const dropDownListOptions = screen.getAllByTestId("res-time-dropdown-option");
-  let originalList = [];
-  dropDownListOptions.forEach(elem => originalList.push(parseInt(elem.value)))
+  const bookingButton = screen.getByText("Book Now");
+  expect(dropDownList).toBeInTheDocument();
+  expect(bookingButton).toBeInTheDocument();
 
   // Select the 20 option in the dropdown.
-    // TODO: Implement
-  // Book the reservation
-  const bookingButton = screen.getByText("Book Now");
-    // TODO: Implement
-  // Check to see if that time was removed.
-    // TODO: Implement
+  fireEvent.change(dropDownList, { target: { value: '20' } });
 
-})
+  // Book the reservation
+  fireEvent.click(bookingButton);
+
+  // Check to see if that time was removed.
+  expect(dropDownListOptions).toEqual(
+    expect.not.arrayContaining(['20'])
+  );
+});

@@ -1,5 +1,5 @@
 import React, { useState, useContext }from 'react'
-import { ReservationContext } from '../api/ResrvationStore';
+import { ReservationContext } from '../store/ResrvationStore';
 import './BookingForm.css';
 
 function BookingForm() {
