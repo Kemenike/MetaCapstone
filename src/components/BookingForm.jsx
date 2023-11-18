@@ -1,8 +1,10 @@
-import React, { useState }from 'react'
+import React, { useState, useContext }from 'react'
+import { ReservationContext } from '../api/ResrvationStore';
 import './BookingForm.css';
 
-function BookingForm({ availableTimes, timeDispatch }) {
+function BookingForm() {
 
+  const [times, dispatch] = useContext(ReservationContext);
   const [date, setDate] = useState();
   const [time, setTime] = useState();
   const [guests, setGuests] = useState();
@@ -11,8 +13,8 @@ function BookingForm({ availableTimes, timeDispatch }) {
   function submitForm(e) {
     e.preventDefault();
     console.log("Submitting form...");
-    timeDispatch({type: 'remove_time', date: date, time: time});
-    console.log(availableTimes);
+    dispatch({type: 'remove_time', date: date, time: time});
+    console.log(times);
   }
 
   return (
@@ -24,7 +26,7 @@ function BookingForm({ availableTimes, timeDispatch }) {
           id='res-date'
           onChange={e => {
             setDate(e.target.value)
-            timeDispatch({type: 'get_time', date: date, time: time})
+            dispatch({type: 'get_time', date: date, time: time})
           }}
         />
         <label className='leadtext' htmlFor='res-time'>Choose Time</label>
@@ -32,7 +34,7 @@ function BookingForm({ availableTimes, timeDispatch }) {
           <option value={""}>Select...</option>
           {
             /* Index Key doesn't matter here. */
-            availableTimes?.map((elem, indx) => <option key={indx}value={elem}>{elem}:00</option>)
+            times?.map((elem, indx) => <option key={indx}value={elem}>{elem}:00</option>)
           }
         </select>
         <label className='leadtext' htmlFor='guests'>Number of Guests</label>

@@ -9,9 +9,6 @@ test('Renders the BookingForm Button', () => {
 });
 
 test('Initialize Times Values', () => {
-  const setState = jest.fn();
-  jest
-    .spyOn(React, 'useState')
-    .mockImplementationOnce(initState => [initState, setState]);
-  render(<BookingForm />);
+  render(<BookingForm/>);
+  const dropdownList = screen.getAllBy
 })

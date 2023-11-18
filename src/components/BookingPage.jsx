@@ -4,7 +4,7 @@ import BookingForm from './BookingForm';
 import cooking from '../assets/restaurant chef B.jpg';
 import "./BookingPage.css";
 
-function BookingPage({ availableTimes, timeDispatch }) {
+function BookingPage() {
 
   // The prop drilling is called for in this course unfortunatly; name is the same to track it.
 
@@ -23,10 +23,7 @@ function BookingPage({ availableTimes, timeDispatch }) {
             </h1>
           </div>
           <div className="booking_page__form">
-            <BookingForm
-              availableTimes={availableTimes}
-              timeDispatch={timeDispatch}
-            />
+            <BookingForm/>
           </div>
         </section>
         <img id="cooking" src={cooking} alt='Chef garnishing a dish.'/>
