@@ -1,3 +1,5 @@
+// Depreciated but kept for notes. 11/19/2023
+
 import { initialState } from "./ResrvationStore";
 
 function ReservationReducer (state, action) {

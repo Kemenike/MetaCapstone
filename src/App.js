@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./components/Home";
 import React from "react";
-import ReservationStore from "./api/ResrvationStore";
+import ReservationStore from "./store/ResrvationStore";
 import BookingPage from "./components/BookingPage";
 import ErrorPage from "./components/ErrorPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

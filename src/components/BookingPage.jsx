@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from './Nav';
 import BookingForm from './BookingForm';
 import cooking from '../assets/restaurant chef B.jpg';
 import "./BookingPage.css";
 
 function BookingPage() {
+
+  useEffect(() => {
+    document.title = "Reserve A Table - Little Lemon";
+  }, [])
 
   return (
     <section className="booking_page__container">

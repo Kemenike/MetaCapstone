@@ -1,10 +1,14 @@
-import React, { useState, useContext }from 'react'
-import { ReservationContext } from '../store/ResrvationStore';
+import React, { useState, useEffect, useContext, useRef } from 'react'
+import { fetchAPI, submitAPI } from '../apis/mockAPI';
 import './BookingForm.css';
+
+// Depreciated but kept for notes. 11/19/2023
+//import { ReservationContext } from '../store/ResrvationStore';
 
 function BookingForm() {
 
-  const [times, dispatch] = useContext(ReservationContext);
+  // Depreciated but kept for notes. 11/19/2023
+  // const [times, dispatch] = useContext(ReservationContext);
   const [date, setDate] = useState();
   const [time, setTime] = useState();
   const [guests, setGuests] = useState();
@@ -12,10 +16,16 @@ function BookingForm() {
 
   function submitForm(e) {
     e.preventDefault();
-    console.log("Submitting form...");
-    dispatch({type: 'remove_time', date: date, time: time});
-    console.log(times);
   }
+
+  let timesRef = useRef([]);
+  useEffect(() => {
+    fetchAPI(date).then(data => {
+      timesRef.current = data;
+      console.log(timesRef.current);
+      timesRef.current?.map((elem, indx) => console.log(elem))
+    });
+  }, [date])
 
   return (
     <section id='booking__form__container'>
@@ -26,15 +36,16 @@ function BookingForm() {
           id='res-date'
           onChange={e => {
             setDate(e.target.value)
-            dispatch({type: 'get_time', date: date, time: time})
           }}
         />
         <label className='leadtext' htmlFor='res-time'>Choose Time</label>
         <select data-testid="res-time-dropdown" id='res-time' onChange={e => setTime(e.target.value)}>
-          <option value={""}>Select...</option>
+          <option value={""} useRef={timesRef}>Select...</option>
           {
             /* Index Key doesn't matter here. */
-            times?.map((elem, indx) => <option data-testid="res-time-dropdown-option" key={indx} value={elem}>{elem}:00</option>)
+            timesRef.current?.map((elem, indx) =>
+              <option data-testid="res-time-dropdown-option" key={indx} value={elem}>{elem}:00</option>
+            )
           }
         </select>
         <label className='leadtext' htmlFor='guests'>Number of Guests</label>
