@@ -23,7 +23,6 @@ const fetchAPI = (date) => {
         resolve(availableTimesByDate[date]);
       } else {
         //
-        console.log(date, availableTimesByDate[date]);
         reject(new Error("No available times for the selected date."));
       }
     }, 1000);
