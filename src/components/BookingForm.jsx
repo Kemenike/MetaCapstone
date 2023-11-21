@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 import { fetchAPI, submitAPI } from '../apis/mockAPI';
 import './BookingForm.css';
 
@@ -9,22 +9,28 @@ function BookingForm() {
 
   // Depreciated but kept for notes. 11/19/2023
   // const [times, dispatch] = useContext(ReservationContext);
-  const [date, setDate] = useState();
+  const [date, setDate] = useState('2001-01-01');
+  const [timeList, setTimeList] = useState([]);
   const [time, setTime] = useState();
   const [guests, setGuests] = useState();
   const [occasion, setOccasion] = useState();
 
   function submitForm(e) {
     e.preventDefault();
+    submitAPI({
+      date: date,
+      time: time,
+      guests: guests,
+      occasion: occasion,
+    })
   }
 
-  let timesRef = useRef([]);
+
+  // This useEffect updates Choose Time list when new time is fetched after inputting a date.
   useEffect(() => {
     fetchAPI(date).then(data => {
-      timesRef.current = data;
-      console.log(timesRef.current);
-      timesRef.current?.map((elem, indx) => console.log(elem))
-    });
+      setTimeList(data);
+    }).catch(e => alert(e.message));
   }, [date])
 
   return (
@@ -39,12 +45,16 @@ function BookingForm() {
           }}
         />
         <label className='leadtext' htmlFor='res-time'>Choose Time</label>
-        <select data-testid="res-time-dropdown" id='res-time' onChange={e => setTime(e.target.value)}>
-          <option value={""} useRef={timesRef}>Select...</option>
+        <select
+          data-testid="res-time-dropdown"
+          id='res-time'
+          onChange={e => setTime(e.target.value)}
+        >
+          <option value={""}>Select...</option>
           {
             /* Index Key doesn't matter here. */
-            timesRef.current?.map((elem, indx) =>
-              <option data-testid="res-time-dropdown-option" key={indx} value={elem}>{elem}:00</option>
+            timeList?.map((elem, indx) =>
+              <option data-testid="res-time-dropdown-option" key={indx} value={elem}>{elem}</option>
             )
           }
         </select>
