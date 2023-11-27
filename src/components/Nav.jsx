@@ -5,7 +5,7 @@ import './Nav.css';
 
 function Nav(props) {
   return (
-    <div id='nav_bar' className='section__container'>
+    <div id='nav_bar'>
       <section className='row'>
         <section className="col">
           <img src={ props.logo || littleLemonLogo } alt='Little Lemon Logo' />

@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from "./Nav.jsx";
 import Landing from "./Landing";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
@@ -12,7 +11,6 @@ function Home() {
   return (
     <div className="app__main">
       <div className="app__container">
-        <Nav />
         <div className="backdrop">
           <Landing />
         </div>
