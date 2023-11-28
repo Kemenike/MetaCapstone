@@ -4,10 +4,12 @@ import Nav from "./components/Nav";
 import React from "react";
 import ReservationStore from "./store/ResrvationStore";
 import BookingPage from "./components/BookingPage";
+import BookingConfirmation from './components/BookingConfirmation';
 import ErrorPage from "./components/ErrorPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
     <Router>
       <Nav />
@@ -21,6 +23,7 @@ function App() {
             </ReservationStore>
           }
         />
+        <Route path='/confirmation' element={<BookingConfirmation />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>

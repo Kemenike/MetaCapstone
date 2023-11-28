@@ -23,7 +23,7 @@ function BookingPage() {
             </h1>
           </div>
           <div className="booking_page__form">
-            <BookingForm/>
+            <BookingForm />
           </div>
         </section>
         <img id="cooking" src={cooking} alt='Chef garnishing a dish.'/>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 import { fetchAPI, submitAPI } from '../apis/mockAPI';
 import './BookingForm.css';
 
@@ -14,6 +15,7 @@ function BookingForm() {
   const [time, setTime] = useState();
   const [guests, setGuests] = useState();
   const [occasion, setOccasion] = useState();
+  const navigate = useNavigate();
 
   function submitForm(e) {
     e.preventDefault();
@@ -22,9 +24,10 @@ function BookingForm() {
       time: time,
       guests: guests,
       occasion: occasion,
-    })
+    }).then(() => {
+      navigate('/confirmation');
+    }).catch(e => alert(e.message));
   }
-
 
   // This useEffect updates Choose Time list when new time is fetched after inputting a date.
   useEffect(() => {
