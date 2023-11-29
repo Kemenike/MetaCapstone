@@ -25,7 +25,12 @@ function BookingForm() {
       guests: guests,
       occasion: occasion,
     }).then(() => {
-      navigate('/confirmation');
+      navigate('/confirmation', { state: {
+        date: date,
+        time: time,
+        guests: guests,
+        occasion: occasion,
+      }});
     }).catch(e => alert(e.message));
   }
 
