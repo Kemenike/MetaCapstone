@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { fetchAPI, submitAPI } from '../apis/mockAPI';
+import { useFormik } from 'formik';
 import './BookingForm.css';
 
 // Depreciated but kept for notes. 11/19/2023
@@ -25,12 +26,14 @@ function BookingForm() {
       guests: guests,
       occasion: occasion,
     }).then(() => {
-      navigate('/confirmation', { state: {
-        date: date,
-        time: time,
-        guests: guests,
-        occasion: occasion,
-      }});
+      navigate('/confirmation', {
+        state: {
+          date: date,
+          time: time,
+          guests: guests,
+          occasion: occasion,
+        }
+      });
     }).catch(e => alert(e.message));
   }
 
@@ -40,6 +43,10 @@ function BookingForm() {
       setTimeList(data);
     }).catch(e => alert(e.message));
   }, [date])
+
+  const formik = useFormik({
+
+  })
 
   return (
     <section id='booking__form__container'>
@@ -66,9 +73,13 @@ function BookingForm() {
             )
           }
         </select>
-        <label className='leadtext' htmlFor='guests'>Number of Guests</label>
+        <label className='leadtext' htmlFor='guests'>
+          Number of Guests
+        </label>
         <input type='number' placeholder='1' min={1} max={10} onChange={e => setGuests(e.target.value)} id='guests' />
-        <label className='leadtext' htmlFor='occasion'>Occasion</label>
+        <label className='leadtext' htmlFor='occasion'>
+          Occasion
+        </label>
         <select id='occasion' onChange={e => setOccasion(e.target.value)}>
           <option value="">Select...</option>
           <option value="birthday">Birthday</option>
