@@ -2,20 +2,26 @@
   display: grid;
   gap: 4vh;
   grid-template-rows: repeat(3, auto);
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(2, auto);
 }
 
-#booking__form > input, select, option {
+#booking__form input, select, option {
   padding: max(0.5vh, 10px);
+  min-width: 100%;
   border-radius: 8px;
   border: 1px solid var(--primary-green);
+  transition: all 150ms ease-in-out;
+}
+
+#booking__form label {
+  align-self: center;
 }
 
 #booking__button {
-  grid-column: 2 / span 2;
+  grid-column: 1 / span 2;
   justify-self: center;
   align-self: center;
-  width: 100%;
+  width: 90%;
   transition: all 150ms ease-in-out;
 }
 
@@ -29,3 +35,16 @@
   width: 98%;
   height: 98%;
 }
+
+.error {
+  position: absolute;
+  color: red;
+  font-weight: 500;
+  opacity: 0%;
+}
+
+.visible {
+  opacity: 100%;
+  transition: all 150ms ease-in-out
+}
+
