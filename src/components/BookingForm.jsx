@@ -9,41 +9,27 @@ import './BookingForm.css';
 
 function BookingForm() {
 
-  // Depreciated but kept for notes. 11/19/2023
-  // const [times, dispatch] = useContext(ReservationContext);
-  const [date, setDate] = useState('2001-01-01');
-  const [timeList, setTimeList] = useState([]);
-  const [time, setTime] = useState();
-  const [guests, setGuests] = useState();
-  const [occasion, setOccasion] = useState();
   const navigate = useNavigate();
+  const [timeList, setTimeList] = useState([]);
 
   // Submit form to Mock API - This will remove the time from options from this session.
   function submitForm(e) {
-    e.preventDefault();
     submitAPI({
-      date: date,
-      time: time,
-      guests: guests,
-      occasion: occasion,
+      time: formik.values.time,
+      date: formik.values.date,
+      guests: formik.values.guests,
+      occasion: formik.values.occasion,
     }).then(() => {
       navigate('/confirmation', {
         state: {
-          date: date,
-          time: time,
-          guests: guests,
-          occasion: occasion,
+          date: formik.values.date,
+          time: formik.values.time,
+          guests: formik.values.guests,
+          occasion: formik.values.occasion,
         }
       });
     }).catch(e => alert(e.message));
   }
-
-  // This useEffect updates Choose Time list when new time is fetched after inputting a date.
-  useEffect(() => {
-    fetchAPI(date).then(data => {
-      setTimeList(data);
-    }).catch(e => alert(e.message));
-  }, [date])
 
   // Initialize Formik
   const formik = useFormik({
@@ -58,21 +44,16 @@ function BookingForm() {
       const errors = {}
       // Date Validation
       if (!values.date) {
-        errors.date = 'Date is Required';
+        errors.date = 'Required';
       } else if (new Date(Date.parse(values.date)).getDate() + 1 < new Date(Date.now()).getDate()) {
-        // Ugly but fixes the bug with Date.parse();
+        // Ugly but fixes the bug with Date.parse() being one day behind;
         errors.date = 'Invaid Date - Reservation cannot be in the past.';
       }
-
       // Time Validation
       if (!values.time || values.time === '') {
         errors.time = 'Required';
-      } else if (parseInt(values.time.split(':')[0]) <= new Date(Date.now()).getHours() + 1) {
-        if (new Date(Date.parse(values.date)).getDate() + 1 === new Date(Date.now()).getDate()) {
-          errors.time = 'Please reserve more than one hour in advance.';
-        } else {
-          errors.time = 'Invalid Time for resrvation.'
-        }
+      } else if (new Date(Date.parse(values.date)).getDate() + 1 === new Date(Date.now()).getDate() && parseInt(values.time.split(':')[0]) <= new Date(Date.now()).getHours() + 1) {
+        errors.time = 'Please reserve more than one hour in advance.';
       }
 
       // Guest Validation
@@ -89,8 +70,17 @@ function BookingForm() {
 
       return errors;
     },
-    onSubmit: event => { submitForm(event); },
+    onSubmit: event => {
+      submitForm(event);
+    },
   })
+
+  // This useEffect updates Choose Time list when new time is fetched after inputting a date.
+  useEffect(() => {
+    fetchAPI(formik.values.date).then(data => {
+      setTimeList(data);
+    }).catch(e => alert(e.message));
+  }, [formik.values.date, setTimeList])
 
   return (
     <section id='booking__form__container'>
@@ -164,7 +154,13 @@ function BookingForm() {
           {(formik.errors.occasion && formik.touched.occasion) ? <div className='error'>{formik.errors.occasion}</div> : null}
         </div>
 
-        <input id="booking__button" className='leadtext' type='submit' onClick={e => submitForm(e)} value="Book Now" />
+        <input
+          id="booking__button"
+          name='submit'
+          className={`leadtext`}
+          type='submit'
+          onClick={formik.handleSubmit}
+          value="Book Now" />
       </form>
     </section >
   )

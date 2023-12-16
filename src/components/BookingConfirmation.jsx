@@ -12,7 +12,6 @@ function BookingConfirmation() {
 
   // Reformating date to match style a litte more.
   let newDate = state.date.split('-');
-  console.log(newDate);
 
   return (
     <div id='booking-confirmation-page'>
