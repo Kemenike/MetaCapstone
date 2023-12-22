@@ -15,6 +15,8 @@ function BookingForm() {
   // Submit form to Mock API - This will remove the time from options from this session.
   function submitForm(e) {
     submitAPI({
+      firstName: formik.values.firstName,
+      lastName: formik.values.lastName,
       time: formik.values.time,
       date: formik.values.date,
       guests: formik.values.guests,
@@ -22,6 +24,8 @@ function BookingForm() {
     }).then(() => {
       navigate('/confirmation', {
         state: {
+          fname: formik.values.firstName,
+          lname: formik.values.lastName,
           date: formik.values.date,
           time: formik.values.time,
           guests: formik.values.guests,
@@ -34,6 +38,8 @@ function BookingForm() {
   // Initialize Formik
   const formik = useFormik({
     initialValues: {
+      firstName: '',
+      lastName: '',
       date: '',
       timeList: [],
       time: '',
@@ -42,6 +48,19 @@ function BookingForm() {
     },
     validate: values => {
       const errors = {}
+
+      // Names - First and Last
+      if(!values.firstName) {
+        errors.firstName = 'Required';
+      } else if(values.namelength <= 1) {
+        errors.firstName = 'Invalid Name.'
+      }
+      if(!values.lastName) {
+        errors.lastName = 'Required';
+      } else if(values.namelength <= 1) {
+        errors.lastName = 'Invalid Name.'
+      }
+
       // Date Validation
       if (!values.date) {
         errors.date = 'Required';
@@ -85,6 +104,30 @@ function BookingForm() {
   return (
     <section id='booking__form__container'>
       <form id='booking__form'>
+
+        <label htmlFor="res-fname" className="leadtext">First Name</label>
+        <div>
+          <input 
+          type="text" 
+          id="res-fname"
+          name='firstName'
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.firstName} />
+          {(formik.errors.firstName && formik.touched.firstName) ? <div className='error'>{formik.errors.firstName}</div> : null}
+        </div>
+
+        <label htmlFor="res-lname" className="leadtext">Last Name</label>
+        <div>
+          <input 
+            type="text"
+            id="res-lname"
+            name='lastName'
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.lastName} />
+          {(formik.errors.lastName && formik.touched.lastName) ? <div className='error'>{formik.errors.lastName}</div> : null}
+        </div>
 
         <label className='leadtext' htmlFor='res-date'>Choose Date</label>
         <div>
@@ -157,7 +200,7 @@ function BookingForm() {
         <input
           id="booking__button"
           name='submit'
-          className={`leadtext`}
+          className={`leadtext ${formik.isValid ? null : 'disabled'}`}
           type='submit'
           onClick={formik.handleSubmit}
           value="Book Now" />

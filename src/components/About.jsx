@@ -10,7 +10,9 @@ function About() {
         <h1 className="about__title displaytitle">Little Lemon</h1>
         <h3 className="about__subtitle subtitle">Chicago</h3>
         <p className="about__description paragraphtext">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corrupti temporibus exercitationem id, quasi incidunt fuga beatae, velit dolore perspiciatis impedit ab iure eius minima, veniam sunt. Vitae, magni saepe aspernatur non quasi commodi praesentium atque ad alias officiis quis harum veritatis et hic sapiente autem! Necessitatibus sapiente perspiciatis voluptate!
+          Located in the heart of our vibrant city, join us for a fantastic time in Greece.
+          Our renowned dishes are created by the freshest ingredients and by our two master
+          chefs, Mario and Adrian.
         </p>
       </section>
       <section className='about__img_container'>

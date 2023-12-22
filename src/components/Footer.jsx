@@ -4,7 +4,6 @@ import footerImg from '../assets/Logo.svg';
 
 function Footer() {
   return (
-    <>
       <div className="footer__container section__container">
         <img src={footerImg} alt=''/>
         <section>
@@ -38,7 +37,6 @@ function Footer() {
           </ul>
         </section>
       </div>
-    </>
   )
 }
 

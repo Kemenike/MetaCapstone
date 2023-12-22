@@ -1,6 +1,7 @@
 import React from 'react';
 import chefImg from '../assets/restaurantfood.jpg'
 import Button from './Button.jsx';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 
 function Landing() {
@@ -11,9 +12,12 @@ function Landing() {
           <h1 className='displaytitle'>Little Lemon</h1>
           <h3 className='subtitle'>Chicago</h3>
           <p className='leadtext'>
-          Mediterranean in the Heart of America. A taste that spans the globe. Make a reservation and dine with us today.
+            Mediterranean in the Heart of America. A taste that spans the globe. Make a reservation and dine with us today.
           </p>
-          <Button info={"Reserve a Table"}/>
+          <Link
+            to='/reservations'>
+            <Button info={"Reserve a Table"} />
+          </Link>
         </section>
         <section className='col'>
           <img src={chefImg} alt='Chef holding cuisine.' />
